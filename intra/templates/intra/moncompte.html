@@ -1,0 +1,23 @@
+{% extends 'intra/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+  <div class="col-md-2 col-sm-6 offset-md-1 colonne_photo">
+    <img src="{% static 'intra/tommy.png' %}" class="photo_profile"/>
+    <h3 class="phrase">{{nom}}</h3>
+  </div>
+
+  <div class="col-md-8 col-sm-6 offset-md-1">
+    <h3 class="phrase">{{poste}}</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-8 offset-md-2">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

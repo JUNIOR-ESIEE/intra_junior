@@ -1,0 +1,29 @@
+.colonne {
+  background-color: lightblue;
+}
+
+.barre {
+  background-color: lightgreen;
+}
+
+.logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50%;
+  width: 50%;
+}
+
+.phrase {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.photo_profile {
+  height: 150px;
+  width: auto;
+}
+
+.colonne_photo {
+  margin-top: 100px;
+  background-color: yellow;
+}
