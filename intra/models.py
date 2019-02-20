@@ -19,3 +19,16 @@ class Eleve(models.Model):
         else:
             self.mail_junior = '.'.join([self.nom,self.prenom])+"@junioresiee.com"
         super(Eleve, self).save(*args, **kwargs)
+
+
+class QnA(models.Model):
+    question = models.CharField(max_length=100)
+    answer = models.TextField()
+    date_created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question
+
+    class Meta:
+        verbose_name = "QnA"
+        verbose_name_plural = "QnA"

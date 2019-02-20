@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import EleveForm
+from .models import QnA
 
 def rejoindre(request):
     form = EleveForm(request.POST or None)
@@ -18,19 +19,8 @@ def rejoindre(request):
 
 
 def faq(request):
-    questions = [
-    ("Pourquoi la junior ?", "Parce que c'est bien."),
-    ("On a quel âge ?", "36 ans."),
-    ("Question nulle ?", "Réponse nulle."),
-    ("Lorem ipsum ?", "Dolor sit amet, consectetur adipiscing elit, \
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad \
-    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat \
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
-    ]
-
-    questions =  3*questions
+    
+    questions = QnA.objects.all()
 
     return render(request, 'intra/faq.html', locals())
 

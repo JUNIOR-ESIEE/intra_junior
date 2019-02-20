@@ -5,17 +5,28 @@
 
 <div class="row justify-content-center">
 
-  <div class="col-sm-6">
-  <h3 class="text-center phrase">La réponse à toutes tes questions !</h3>
-    <ul>
-        {% for q,r in questions %}
-          <li>
-            <h4>{{q}}</h4>
-            <p>{{r}}</p>
-          </li>
-        {% endfor %}
-    </ul>
-  </div>
+    <div class="col-sm-6">
+        <h3 class="text-center phrase">La réponse à toutes tes questions !</h3>
+        <div class="accordion" id="accordionExample">
+            {% for qna in questions %}
+            <div class="card">
+                <div class="card-header" id="heading{{forloop.counter}}" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="false" aria-controls="collapse{{forloop.counter}}" style="cursor:pointer;">
+                    <h5 class="mb-0">
+                        <button class="btn">
+                            {{qna.question}}
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                    <div class="card-body">
+                        {{qna.answer}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% endblock %}
